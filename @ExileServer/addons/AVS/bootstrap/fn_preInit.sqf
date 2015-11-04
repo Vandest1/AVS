@@ -38,7 +38,7 @@ _worldFound = false;
 
 if (!_worldFound) exitWith
 {
-	diag_log format["AVS - CRITICAL ERROR: UNSUPPORTED MAP (%1). SHUTTING DOWN. CONFIGURE THIS WORLD FOR US IN AVS_WorldInfo", worldName];
+	diag_log format["AVS - CRITICAL ERROR: UNSUPPORTED MAP (%1). SHUTTING DOWN. CONFIGURE THIS WORLD FOR USE IN AVS_WorldInfo", worldName];
 };
 
 // ******************************************************************
