@@ -26,6 +26,7 @@ call AVS_configuration;
 
 // Select world center and radius
 _worldFound = false;
+
 {
 	if ((_x select 0) isEqualTo worldName) exitWith
 	{
@@ -37,7 +38,7 @@ _worldFound = false;
 
 if (!_worldFound) exitWith
 {
-	diag_log "AVS - CRITICAL ERROR: UNSUPPORTED MAP. SHUTTING DOWN.";
+	diag_log format["AVS - CRITICAL ERROR: UNSUPPORTED MAP (%1). SHUTTING DOWN. CONFIGURE THIS WORLD FOR US IN AVS_WorldInfo", worldName];
 };
 
 // ******************************************************************
