@@ -106,32 +106,35 @@ AVS_PersistentVehiclesAmmoPercent = 0;
 
 //**************************************************************
 
-AVS_useSpawnedPersistentVehiclesLocation = true;
+AVS_useSpawnedPersistentVehiclesLocation = true; // Spawns persistent vehicles at specified locations
 AVS_LocationSearchRadius = 50;
 AVS_spawnedPersistentVehiclesLocation =
 [
+	//["ID Tag", ["ClassName", "ClassName", ...], [DamageMin, DamageMax], NumberToPersist, [[Location1], [Location2], ...]]
+	// NOTE: ID Tag is how AVS tracks how many to persist. If there's 5 vehicles with the ID tag "RandomVehicles" then no more will spawn here.
 	["RandomVehicles", ["I_MRAP_03_hmg_F", "B_Heli_Light_01_armed_F"], [0.1, 0.75], 5, [[14909.1,16462.8,0.00143814], [15086.6,16636.2,0.00144386]]],
 	// OR
+	//["ID Tag", ["ClassName", "ClassName", ...], Damage, NumberToPersist, [[Location1], [Location2], ...]]
 	["RandomHeli", ["B_Heli_Light_01_armed_F"], 0.25, 2, [[15186.8,16741.9,0.00143814]]]
 ];
 
 //**************************************************************
 
-AVS_useSpawnedPersistentVehiclesRoadside = false;
-AVS_RoadSearchRadius = 200;
+AVS_useSpawnedPersistentVehiclesRoadside = false; // Spawns persistent vehicles near roads.
+AVS_RoadSearchRadius = 200; // Max distance to the road
 AVS_spawnedPersistentVehiclesRoadside =
 [
-	["UID", ["Class1", "Class2"], [0.1, 0.75], 5],
+	//["ID Tag", ["Class1", "Class2"], [DamageMin, DamageMax], NumberToPersist],
 	// OR
-	["UID", ["Class1", "Class2"], 0.25, 2]
+	//["ID Tag", ["Class1", "Class2"], Damage, NumberToPersist]
 ];
 
 //**************************************************************
 
-AVS_useSpawnedPersistentVehiclesRandom = false;
+AVS_useSpawnedPersistentVehiclesRandom = false; // Spawns persistent vehicles completely randomly.
 AVS_spawnedPersistentVehiclesRandom =
 [
-	["UID", ["Class1", "Class2"], [0.1, 0.75], 5],
+	//["ID Tag", ["Class1", "Class2"], [DamageMin, DamageMax], NumberToPersist],
 	// OR
-	["UID", ["Class1", "Class2"], 0.25, 2]
+	//["ID Tag", ["Class1", "Class2"], Damage, NumberToPersist]
 ];
