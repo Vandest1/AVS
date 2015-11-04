@@ -49,7 +49,7 @@ if (hasInterface) then
 				throw 1;
 			};
 
-			_servicePoints = (nearestObjects [getPosATL _vehicle, ["Land_fs_feed_F"], 15]);
+			_servicePoints = (nearestObjects [getPosATL _vehicle, AVS_RearmObjects, 15]);
 
 			if (count _servicePoints == 0) then
 			{
