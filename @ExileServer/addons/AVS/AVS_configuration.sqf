@@ -103,6 +103,7 @@ AVS_RearmCosts =
 AVS_DebugMarkers = false;
 AVS_PersistentVehiclesPinCode = "0000";
 AVS_PersistentVehiclesAmmoPercent = 0; // 100 = full ammo, 50 = half ammo, 0 = no ammo
+AVS_PersistentVehiclesFuelPercent = 25; // 100 = full, 50 = half, 0 = empty
 
 //**************************************************************
 
