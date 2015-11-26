@@ -74,6 +74,9 @@ AVS_RearmDistance = 15;
 // Number of seconds it takes to rearm. (NOT YET IMPLEMENTED)
 AVS_RearmTime = 15;
 
+// Disabled rearming at ammo trucks.
+AVS_DisableStockRearm = true;
+
 // Objects of this type will give the "rearm" action.
 AVS_RearmObjects =
 [
@@ -100,6 +103,20 @@ AVS_RearmCosts =
 
 //**************************************************************
 
+// Disabled stock refueling at fuel trucks / gas pumps.
+AVS_DisableStockRefuel = false;
+
+AVS_RefuelSystemActive = false;
+AVS_RefuelObjects =
+[
+	"Land_fs_feed_F", // Gas Station Pump
+	"Exile_Car_Van_Fuel_Abstract"
+];
+
+AVS_RefuelCost = 5; // 5 poptabs/liter
+
+//**************************************************************
+
 AVS_DebugMarkers = false;
 AVS_PersistentVehiclesPinCode = "0000";
 AVS_PersistentVehiclesAmmoPercent = 0; // 100 = full ammo, 50 = half ammo, 0 = no ammo
@@ -108,7 +125,7 @@ AVS_PersistentVehiclesFuelPercent = 25; // 100 = full, 50 = half, 0 = empty
 //**************************************************************
 
 AVS_useSpawnedPersistentVehiclesLocation = true; // Spawns persistent vehicles at specified locations
-AVS_LocationSearchRadius = 50;
+AVS_LocationSearchRadius = 50; // Set to 0 for exact positioning.
 AVS_spawnedPersistentVehiclesLocation =
 [
 	//["ID Tag", ["ClassName", "ClassName", ...], [DamageMin, DamageMax], NumberToPersist, [[Location1], [Location2], ...]]

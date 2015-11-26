@@ -26,13 +26,13 @@ call AVS_configuration;
 
 // Select world center and radius
 _worldFound = false;
-
 {
 	if ((_x select 0) isEqualTo worldName) exitWith
 	{
 		AVS_WorldCenter = _x select 1;
 		AVS_WorldRadius = _x select 2;
 		_worldFound = true;
+		diag_log format["AVS - World Detected: %1", worldName];
 	}
 } forEach AVS_WorldInfo;
 

@@ -66,3 +66,15 @@ if (AVS_DisableVehicleNVGsGlobal || {(toLower _vehicleClass) in AVS_DisableVehic
 {
 	_vehicle disableNVGEquipment true;
 };
+
+// Disable stock rearm system
+if (AVS_DisableStockRearm) then
+{
+	_vehicle setAmmoCargo 0;
+};
+
+// Disable stock refuel system
+if (AVS_DisableStockRefuel) then
+{
+	_vehicle setFuelCargo 0;
+}
