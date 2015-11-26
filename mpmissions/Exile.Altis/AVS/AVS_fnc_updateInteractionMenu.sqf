@@ -55,51 +55,58 @@ if (hasInterface) then
 			};
 
 			_pos = getPosATL _vehicle;
-			_rearmPoints = (nearestObjects [_pos, AVS_RearmObjects, AVS_RearmDistance]);
-
-			if (count _rearmPoints > 0) then
+			
+			if (AVS_RearmSystemActive) then
 			{
-				_rearmCost = _vehicle call AVS_fnc_getRearmCost;
+				_rearmPoints = (nearestObjects [_pos, AVS_RearmObjects, AVS_RearmDistance]);
 
-				if (AVS_rearmActionAdded && AVS_previousRearmCost != _rearmCost) then
+				if (count _rearmPoints > 0) then
 				{
-					player removeAction AVS_rearmAction;
-				};
-				
-				if (_rearmCost > 0) then
-				{
-					_rearmTitle = format ["Rearm: %1 poptabs", _rearmCost];
-					AVS_rearmAction = player addAction [_rearmTitle, AVS_fnc_requestRearm, [_vehicle]];
-					AVS_previousRearmCost = _rearmCost;
-					AVS_rearmActionAdded = true;
-				}
-				else
-				{
-					if (AVS_rearmActionAdded) then
+					_rearmCost = _vehicle call AVS_fnc_getRearmCost;
+
+					if (AVS_rearmActionAdded && AVS_previousRearmCost != _rearmCost) then
 					{
 						player removeAction AVS_rearmAction;
-						AVS_rearmActionAdded = false;
+					};
+					
+					if (_rearmCost > 0) then
+					{
+						_rearmTitle = format ["Rearm: %1 poptabs", _rearmCost];
+						AVS_rearmAction = player addAction [_rearmTitle, AVS_fnc_requestRearm, [_vehicle]];
+						AVS_previousRearmCost = _rearmCost;
+						AVS_rearmActionAdded = true;
+					}
+					else
+					{
+						if (AVS_rearmActionAdded) then
+						{
+							player removeAction AVS_rearmAction;
+							AVS_rearmActionAdded = false;
+						};
 					};
 				};
 			};
 			
-			_refuelPoints = (nearestObjects [_pos, AVS_RefuelObjects, AVS_RefuelDistance]);
-			
-			if (count _refuelPoints > 0) then
+			if (AVS_RefuelSystemActive) then
 			{
-				_refuelCost = _vehicle call AVS_fnc_getRefuelCost;
+				_refuelPoints = (nearestObjects [_pos, AVS_RefuelObjects, AVS_RefuelDistance]);
 				
-				if (AVS_refuelActionAdded && AVS_previousRefuelCost != _refuelCost) then
+				if (count _refuelPoints > 0) then
 				{
-					player removeAction AVS_refuelAction;
-				};
-				
-				if (_refuelCost > 0) then
-				{
-					_refuelTitle = format ["Refuel: %1 poptabs", _refuelCost];
-					AVS_refuelAction = player addAction [_rearmTitle, AVS_fnc_requestRefuel, [_vehicle]];
-					AVS_previousRefuelCost = _refuelCost;
-					AVS_refuelActionAdded = true;
+					_refuelCost = _vehicle call AVS_fnc_getRefuelCost;
+					
+					if (AVS_refuelActionAdded && AVS_previousRefuelCost != _refuelCost) then
+					{
+						player removeAction AVS_refuelAction;
+					};
+					
+					if (_refuelCost > 0) then
+					{
+						_refuelTitle = format ["Refuel: %1 poptabs", _refuelCost];
+						AVS_refuelAction = player addAction [_rearmTitle, AVS_fnc_requestRefuel, [_vehicle]];
+						AVS_previousRefuelCost = _refuelCost;
+						AVS_refuelActionAdded = true;
+					};
 				};
 			};
 		}
