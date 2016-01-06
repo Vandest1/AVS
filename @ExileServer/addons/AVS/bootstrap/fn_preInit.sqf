@@ -52,12 +52,13 @@ _worldFound = false;
 		AVS_WorldCenter = _x select 1;
 		AVS_WorldRadius = _x select 2;
 		_worldFound = true;
+		diag_log format["AVS - World Detected: %1", worldName];
 	}
 } forEach AVS_WorldInfo;
 
 if (!_worldFound) exitWith
 {
-	diag_log "AVS - CRITICAL ERROR: UNSUPPORTED MAP. SHUTTING DOWN.";
+	diag_log format["AVS - CRITICAL ERROR: UNSUPPORTED MAP (%1). SHUTTING DOWN. CONFIGURE THIS WORLD FOR USE IN AVS_WorldInfo", worldName];
 };
 
 // ******************************************************************

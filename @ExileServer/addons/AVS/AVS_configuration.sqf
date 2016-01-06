@@ -13,7 +13,8 @@ AVS_WorldInfo =
 [
     ["Altis", [15350, 15350, 0], 15350],
     ["Esseker", [6150,6150,0], 6150],
-    ["Chernarus", [7700,8500,0], 11000]
+    ["Chernarus", [7700,8500,0], 11000],
+	["Lingor3", [4968.00,4938.00,0], 10000]
 ];
 
 //**************************************************************
@@ -73,6 +74,9 @@ AVS_RearmDistance = 15;
 // Number of seconds it takes to rearm. (NOT YET IMPLEMENTED)
 AVS_RearmTime = 15;
 
+// Disabled rearming at ammo trucks.
+AVS_DisableStockRearm = true;
+
 // Objects of this type will give the "rearm" action.
 AVS_RearmObjects =
 [
@@ -99,38 +103,56 @@ AVS_RearmCosts =
 
 //**************************************************************
 
-AVS_DebugMarkers = false;
-AVS_PersistentVehiclesPinCode = "0000";
-AVS_PersistentVehiclesAmmoPercent = 0;
+// Disabled stock refueling at fuel trucks / gas pumps.
+AVS_DisableStockRefuel = false;
+
+AVS_RefuelSystemActive = false;
+AVS_RefuelObjects =
+[
+	"Land_fs_feed_F", // Gas Station Pump
+	"Exile_Car_Van_Fuel_Abstract"
+];
+
+AVS_RefuelCost = 5; // 5 poptabs/liter
 
 //**************************************************************
 
-AVS_useSpawnedPersistentVehiclesLocation = true;
-AVS_LocationSearchRadius = 50;
+AVS_DebugMarkers = false;
+AVS_PersistentVehiclesPinCode = "0000";
+AVS_PersistentVehiclesAmmoPercent = 0; // 100 = full ammo, 50 = half ammo, 0 = no ammo
+AVS_PersistentVehiclesFuelPercent = 25; // 100 = full, 50 = half, 0 = empty
+
+//**************************************************************
+
+AVS_useSpawnedPersistentVehiclesLocation = true; // Spawns persistent vehicles at specified locations
+AVS_LocationSearchRadius = 50; // Set to 0 for exact positioning.
 AVS_spawnedPersistentVehiclesLocation =
 [
+	//["ID Tag", ["ClassName", "ClassName", ...], [DamageMin, DamageMax], NumberToPersist, [[Location1], [Location2], ...]]
+	// NOTE: ID Tag is how AVS tracks how many to persist. If there's 5 vehicles with the ID tag "RandomVehicles" then no more will spawn here.
 	["RandomVehicles", ["I_MRAP_03_hmg_F", "B_Heli_Light_01_armed_F"], [0.1, 0.75], 5, [[14909.1,16462.8,0.00143814], [15086.6,16636.2,0.00144386]]],
 	// OR
+	//["ID Tag", ["ClassName", "ClassName", ...], Damage, NumberToPersist, [[Location1], [Location2], ...]]
 	["RandomHeli", ["B_Heli_Light_01_armed_F"], 0.25, 2, [[15186.8,16741.9,0.00143814]]]
 ];
 
 //**************************************************************
 
-AVS_useSpawnedPersistentVehiclesRoadside = false;
-AVS_RoadSearchRadius = 200;
+AVS_useSpawnedPersistentVehiclesRoadside = false; // Spawns persistent vehicles near roads.
+AVS_RoadSearchRadius = 200; // Max distance to the road
 AVS_spawnedPersistentVehiclesRoadside =
 [
-	["UID", ["Class1", "Class2"], [0.1, 0.75], 5],
+	//["ID Tag", ["Class1", "Class2"], [DamageMin, DamageMax], NumberToPersist],
 	// OR
-	["UID", ["Class1", "Class2"], 0.25, 2]
+	//["ID Tag", ["Class1", "Class2"], Damage, NumberToPersist]
 ];
 
 //**************************************************************
 
-AVS_useSpawnedPersistentVehiclesRandom = false;
+AVS_useSpawnedPersistentVehiclesRandom = false; // Spawns persistent vehicles completely randomly.
 AVS_spawnedPersistentVehiclesRandom =
 [
-	["UID", ["Class1", "Class2"], [0.1, 0.75], 5],
+	//["ID Tag", ["Class1", "Class2"], [DamageMin, DamageMax], NumberToPersist],
 	// OR
-	["UID", ["Class1", "Class2"], 0.25, 2]
+	//["ID Tag", ["Class1", "Class2"], Damage, NumberToPersist]
 ];

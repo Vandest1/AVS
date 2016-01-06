@@ -6,7 +6,7 @@ Co-Developed by Vishpala
 All rights reserved.
 
 Function:
-	AVS_fnc_requestRearm - Requests the server to rearm a vehicle.
+	AVS_fnc_requestRefuel - Requests the server to refuel a vehicle.
 
 Usage:
 	AddAction result.
@@ -22,7 +22,7 @@ _OK = (_this select 3) params
 
 if (!_OK) exitWith
 {
-	diag_log format ["AVS Error: Calling AVS_fnc_requestRearm with invalid parameters: %1",_this];
+	diag_log format ["AVS Error: Calling AVS_fnc_requestRefuel with invalid parameters: %1",_this];
 };
 
-[ExileClientSessionId, _vehicle] remoteExecCall ["AVS_fnc_rearmVehicle", 2];
+[ExileClientSessionId, _vehicle] remoteExecCall ["AVS_fnc_refuelVehicle", 2];

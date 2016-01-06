@@ -40,6 +40,7 @@ class CfgFunctions
 			class getBlacklistedWeapons			{};
 			class loadAmmo						{};
 			class rearmVehicle					{};
+			class refuelVehicle					{};
 			class sanitizeVehicle				{};
 			class saveAmmo						{};
 			class spawnAllVehicles				{};

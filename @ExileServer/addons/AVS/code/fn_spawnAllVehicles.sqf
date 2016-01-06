@@ -48,8 +48,16 @@ if (AVS_useSpawnedPersistentVehiclesLocation) then
 
 		while {(_spawnedVehicleTracker select 1) < _numToSpawn} do
 		{
+		
 			_position = _positions select (floor (random (count _positions)));
-			_positionReal = [_position, 25, AVS_LocationSearchRadius, 5, 0 , 1 , 0 , _blacklistedPositions] call BIS_fnc_findSafePos;
+			if (AVS_LocationSearchRadius isEqualTo 0) then
+			{
+				_positionReal = _position;
+			}
+			else
+			{
+				_positionReal = [_position, 25, AVS_LocationSearchRadius, 5, 0 , 1 , 0 , _blacklistedPositions] call BIS_fnc_findSafePos;
+			};
 
 			[_uid, _classNames, _damage, _positionReal] call AVS_fnc_spawnPersistentVehicle;
 

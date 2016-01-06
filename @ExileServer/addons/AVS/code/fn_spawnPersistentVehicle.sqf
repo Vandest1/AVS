@@ -56,6 +56,7 @@ _hitpoints = _vehicleClassName call ExileClient_util_vehicle_getHitPoints;
 } forEach _hitpoints;
 
 _vehicle setVehicleAmmoDef (AVS_PersistentVehiclesAmmoPercent / 100);
+_vehicle setFuel (AVS_PersistentVehiclesFuelPercent / 100);
 
 // Add vehicle to database.
 _vehicle call ExileServer_object_vehicle_database_insert;
