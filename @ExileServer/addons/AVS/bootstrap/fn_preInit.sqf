@@ -22,6 +22,26 @@ AVS_fnc_getConfigLoadout = compileFinal (preprocessFileLineNumbers "AVS\AVS_fnc_
 
 call AVS_configuration;
 
+
+// This code is NECESSARY for spawning persistent vehicles. DO NOT REMOVE THIS CODE UNLESS YOU KNOW WHAT YOU ARE DOING
+{
+	if (_x select 0) then
+	{
+		{
+			_uid = _x select 0;
+			if !(_uid in AVS_UIDs) then
+			{
+				AVS_UIDs pushBack _uid;
+			};
+		} forEach (_x select 1);
+	};
+} forEach
+[
+	[AVS_useSpawnedPersistentVehiclesLocation,AVS_spawnedPersistentVehiclesLocation],
+	[AVS_useSpawnedPersistentVehiclesRoadside,AVS_spawnedPersistentVehiclesRoadside],
+	[AVS_useSpawnedPersistentVehiclesRandom,AVS_spawnedPersistentVehiclesRandom]
+];
+
 // ******************************************************************
 
 // Select world center and radius
@@ -50,13 +70,13 @@ if (!_worldFound) exitWith
 	_function = _x select 0;
 	_file = _x select 1;
 	_hook = _x select 2;
-	
+
 	if (isText (missionConfigFile >> 'CfgExileCustomCode' >> _function)) then
 	{
 		_file = getText (missionConfigFile >> 'CfgExileCustomCode' >> _function);
 	};
-	
-	_codeHook = compileFinal (preprocessFileLineNumbers _hook);                    
+
+	_codeHook = compileFinal (preprocessFileLineNumbers _hook);
 	_codeOrig = compileFinal (preprocessFileLineNumbers _file);
     missionNamespace setVariable [_function, _codeHook];
 	missionNamespace setVariable [format["%1_ORIGINAL", _function], _codeOrig];
@@ -72,7 +92,7 @@ if (!_worldFound) exitWith
 	['ExileServer_object_vehicle_database_load', 'exile_server\code\ExileServer_object_vehicle_database_load.sqf', 'AVS\hooks\AVS_vehicle_database_load.sqf'],
 	['ExileServer_system_database_connect', 'exile_server\code\ExileServer_system_database_connect.sqf', 'AVS\hooks\AVS_system_database_connect.sqf'],
 	['ExileServer_world_initialize', 'exile_server\code\ExileServer_world_initialize.sqf', 'AVS\hooks\AVS_world_initialize.sqf']
-	
+
 ];
 
 // ******************************************************************
@@ -94,10 +114,10 @@ if (!_worldFound) exitWith
 	private ["_currentBlacklist"];
 	_x set [0, toLower(_x select 0)];
 	_currentBlacklist = _x select 1;
-	{ 
+	{
 		_currentBlacklist set [_forEachIndex, toLower _x];
 	} forEach _currentBlacklist;
-	
+
 	// Append Global blacklist to this blacklist.
 	_currentBlacklist = _currentBlacklist + AVS_GlobalWeaponBlacklist;
 } forEach AVS_VehicleWeaponBlacklist;
@@ -106,20 +126,20 @@ if (!_worldFound) exitWith
 	private ["_currentBlacklist"];
 	_x set [0, toLower(_x select 0)];
 	_currentBlacklist = _x select 1;
-	{ 
+	{
 		_currentBlacklist set [_forEachIndex, toLower _x];
 	} forEach _currentBlacklist;
-	
+
 	// Append Global blacklist to this blacklist.
 	_currentBlacklist = _currentBlacklist + AVS_GlobalAmmoBlacklist;
-} forEach AVS_VehicleAmmoBlacklist;	
+} forEach AVS_VehicleAmmoBlacklist;
 
 // ******************************************************************
 
 // Setup vehicle UID trackers from config.
 
 AVS_SpawnedVehicleTracker = [];
-_processVehicleSpawn = 
+_processVehicleSpawn =
 {
 	{
 		AVS_SpawnedVehicleTracker pushBack [(_x select 0), 0];

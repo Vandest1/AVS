@@ -25,7 +25,7 @@ if (hasInterface) then
 		{
 			_vehicle = vehicle player;
 
-			if (!alive player || {_vehicle == player}) then
+			if (!alive player || {_vehicle isEqualTo player}) then
 			{
 				throw 1;
 			};
@@ -49,23 +49,23 @@ if (hasInterface) then
 				throw 1;
 			};
 
-			_servicePoints = (nearestObjects [getPosATL _vehicle, ["Land_fs_feed_F"], 15]);
+			_servicePoints = (nearestObjects [_vehicle, ["Land_fs_feed_F"], 15]);
 
-			if (count _servicePoints == 0) then
+			if (count _servicePoints isEqualTo 0) then
 			{
 				throw 1;
 			};
 
 			_rearmCost = _vehicle call AVS_fnc_getRearmCost;
 
-			if (_rearmCost == 0) then
+			if (_rearmCost isEqualTo 0) then
 			{
 				throw 1;
 			};
 
 			if (AVS_actionAdded) then
 			{
-				if (AVS_previousRearmCost != _rearmCost) then
+				if !(AVS_previousRearmCost isEqualTo _rearmCost) then
 				{
 					player removeAction AVS_rearmAction;
 				}
@@ -82,7 +82,7 @@ if (hasInterface) then
 		}
 		catch
 		{
-			if (_exception == 1) then
+			if (_exception isEqualTo 1) then
 			{
 				if (AVS_actionAdded) then
 				{

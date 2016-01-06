@@ -25,6 +25,14 @@ _getSpawnedVehicleTracker =
 	} forEach AVS_SpawnedVehicleTracker;
 };
 
+// This code is NECESSARY for spawning persistent vehicles. DO NOT REMOVE THIS CODE UNLESS YOU KNOW WHAT YOU ARE DOING
+{
+	if !(format["isKnownAccount:%1",_x] call ExileServer_system_database_query_selectSingleField) then
+	{
+		format["createAccount:%1:%1",_x] call ExileServer_system_database_query_fireAndForget;
+	};
+} forEach AVS_UIDs;
+
 _blacklistedPositions = [];
 if (AVS_useSpawnedPersistentVehiclesLocation) then
 {

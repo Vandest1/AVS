@@ -32,7 +32,7 @@ if (AVS_RearmSystemActive) then
 	AVS_fnc_setPlayerMoney = compileFinal (preprocessFileLineNumbers "AVS\AVS_fnc_setPlayerMoney.sqf");
 	AVS_fnc_updateInteractionMenu = compileFinal (preprocessFileLineNumbers "AVS\AVS_fnc_updateInteractionMenu.sqf");
 
-	diag_log format ["!hasInterfaction: %1; isServer: %2", !hasInterface, isServer];
+	//diag_log format ["!hasInterfaction: %1; isServer: %2", !hasInterface, isServer];
 	if (!hasInterface || isServer) then
 	{
 		diag_log "AVS - Mission code initialized.";
