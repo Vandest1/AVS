@@ -29,7 +29,7 @@ if (AVS_RearmSystemActive || AVS_RefuelSystemActive) then
 	AVS_fnc_getRefuelCost = compileFinal (preprocessFileLineNumbers "AVS\AVS_fnc_getRefuelCost.sqf");
 	AVS_fnc_getVehicleLoadout = compileFinal (preprocessFileLineNumbers "AVS\AVS_fnc_getVehicleLoadout.sqf");
 	AVS_fnc_rearmTurret = compileFinal (preprocessFileLineNumbers "AVS\AVS_fnc_rearmTurret.sqf");
-	AVS_fnc_refuelVehicleClient = compileFinal (preprocessFileLineNumbers "AVS\AVS_fnc_refuelVehicleClient");
+	AVS_fnc_refuelVehicleClient = compileFinal (preprocessFileLineNumbers "AVS\AVS_fnc_refuelVehicleClient.sqf");
 	AVS_fnc_requestRearm = compileFinal (preprocessFileLineNumbers "AVS\AVS_fnc_requestRearm.sqf");
 	AVS_fnc_requestRefuel = compileFinal (preprocessFileLineNumbers "AVS\AVS_fnc_requestRefuel.sqf");
 	AVS_fnc_setPlayerMoney = compileFinal (preprocessFileLineNumbers "AVS\AVS_fnc_setPlayerMoney.sqf");

@@ -16,7 +16,7 @@ class CfgPatches
 	{
 		units[] = {};
 		weapons[] = {};
-		AVS_Version = "1.0.1 RC2";
+		AVS_Version = "1.0.1 RC3";
 	};
 };
 

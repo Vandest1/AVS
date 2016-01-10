@@ -22,8 +22,8 @@ AVS_fnc_getConfigLoadout = compileFinal (preprocessFileLineNumbers "AVS\AVS_fnc_
 
 call AVS_configuration;
 
-
 // This code is NECESSARY for spawning persistent vehicles. DO NOT REMOVE THIS CODE UNLESS YOU KNOW WHAT YOU ARE DOING
+AVS_UIDs = [];
 {
 	if (_x select 0) then
 	{
