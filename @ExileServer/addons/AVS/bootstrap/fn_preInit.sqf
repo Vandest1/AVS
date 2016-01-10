@@ -96,6 +96,10 @@ if (!_worldFound) exitWith
 
 ];
 
+// Legacy functions that AVS uses that have been removed from the Exile mod.
+ExileServer_util_position_findRoadPosition = compileFinal preprocessFileLineNumbers "AVS\legacy\ExileServer_util_position_findRoadPosition.sqf";
+ExileClient_util_vehicle_getHitPoints = compileFinal preprocessFileLineNumbers "AVS\legacy\ExileClient_util_vehicle_getHitPoints.sqf";
+
 // ******************************************************************
 
 // Sanitize configuration.
