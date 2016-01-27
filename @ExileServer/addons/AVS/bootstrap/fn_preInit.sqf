@@ -163,6 +163,7 @@ AVS_spawned_NON_PersistentVehiclesRandom call _processVehicleSpawn;
 // Send info to the clients
 publicVariable "AVS_Version";
 publicVariable "AVS_RearmSystemActive";
+publicVariable "AVS_RefuelSystemActive";
 if (AVS_RearmSystemActive) then
 {
 	diag_log "AVS - Rearm system active.";
@@ -171,6 +172,13 @@ if (AVS_RearmSystemActive) then
 	publicVariable "AVS_RearmObjects";
 	publicVariable "AVS_RearmCostDefault";
 	publicVariable "AVS_RearmCosts";
+};
+if (AVS_RefuelSystemActive) then
+{
+	diag_log "AVS - Refuel system active.";
+	publicVariable "AVS_RefuelDistance";
+	publicVariable "AVS_RefuelObjects";
+	publicVariable "AVS_RefuelCost";
 };
 
 diag_log "AVS - Initialized.";
