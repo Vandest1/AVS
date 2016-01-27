@@ -70,10 +70,13 @@ if (hasInterface) then
 
 					if (_rearmCost > 0) then
 					{
-						_rearmTitle = format ["Rearm: %1 poptabs", _rearmCost];
-						AVS_rearmAction = player addAction [_rearmTitle, AVS_fnc_requestRearm, [_vehicle]];
-						AVS_previousRearmCost = _rearmCost;
-						AVS_rearmActionAdded = true;
+						if (!AVS_rearmActionAdded) then 
+						{
+							_rearmTitle = format ["Rearm: %1 poptabs", _rearmCost];
+							AVS_rearmAction = player addAction [_rearmTitle, AVS_fnc_requestRearm, [_vehicle]];
+							AVS_previousRearmCost = _rearmCost;
+							AVS_rearmActionAdded = true;
+						};
 					}
 					else
 					{
