@@ -69,7 +69,7 @@ AVS_VehicleAmmoBlacklist =
 AVS_RearmSystemActive = true;
 
 // Distance away from an object to get the rearm option.
-AVS_RearmDistance = 15;
+AVS_RearmDistance = 30;
 
 // Number of seconds it takes to rearm. (NOT YET IMPLEMENTED)
 AVS_RearmTime = 15;
@@ -81,7 +81,9 @@ AVS_DisableStockRearm = true;
 AVS_RearmObjects =
 [
 //	"ClassName"
-	"Land_fs_feed_F"	// Gas station pump.
+	//"Land_fs_feed_F"	// Gas station pump.
+	"Land_Hangar_F",
+	"Land_TentHangar_V1_F"
 ];
 
 // Default cost of a magazine if not found in AVS_RearmCosts
@@ -107,6 +109,7 @@ AVS_RearmCosts =
 AVS_DisableStockRefuel = false;
 
 AVS_RefuelSystemActive = false;
+AVS_RefuelDistance = 15;
 AVS_RefuelObjects =
 [
 	"Land_fs_feed_F", // Gas Station Pump
@@ -124,7 +127,7 @@ AVS_PersistentVehiclesFuelPercent = 25; // 100 = full, 50 = half, 0 = empty
 
 //**************************************************************
 
-AVS_useSpawnedPersistentVehiclesLocation = true; // Spawns persistent vehicles at specified locations
+AVS_useSpawnedPersistentVehiclesLocation = false; // Spawns persistent vehicles at specified locations
 AVS_LocationSearchRadius = 50; // Set to 0 for exact positioning.
 AVS_spawnedPersistentVehiclesLocation =
 [
