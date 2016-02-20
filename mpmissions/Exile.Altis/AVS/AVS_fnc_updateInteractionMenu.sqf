@@ -107,7 +107,7 @@ if (hasInterface) then
 						if (!AVS_refuelActionAdded) then 
 						{
 							_refuelTitle = format ["Refuel: %1 poptabs", _refuelCost];
-							AVS_refuelAction = player addAction [_rearmTitle, AVS_fnc_requestRefuel, [_vehicle]];
+							AVS_refuelAction = player addAction [_refuelTitle, AVS_fnc_requestRefuel, [_vehicle]];
 							AVS_previousRefuelCost = _refuelCost;
 							AVS_refuelActionAdded = true;
 						};
