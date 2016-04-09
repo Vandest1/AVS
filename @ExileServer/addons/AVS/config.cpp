@@ -16,7 +16,7 @@ class CfgPatches
 	{
 		units[] = {};
 		weapons[] = {};
-		AVS_Version = "1.0.1 RC3";
+		AVS_Version = "1.0.1 RC4";
 	};
 };
 
@@ -36,6 +36,7 @@ class CfgFunctions
 		class compiles
 		{
 			file = "AVS\code";
+			class fillCanister					{};
 			class getBlacklistedAmmo			{};
 			class getBlacklistedWeapons			{};
 			class loadAmmo						{};
