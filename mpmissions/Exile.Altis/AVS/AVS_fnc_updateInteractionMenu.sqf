@@ -2,7 +2,7 @@
 © 2015 Zenix Gaming Ops
 Developed by Rod-Serling
 Co-Developed by Vishpala
-and Vandest
+and Vandest ;p
 
 All rights reserved.
 
