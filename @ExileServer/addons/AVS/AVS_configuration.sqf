@@ -71,7 +71,11 @@ AVS_VehicleAmmoBlacklist =
 AVS_RearmSystemActive = true;
 
 // Distance away from an object to get the rearm option.
+<<<<<<< HEAD
 AVS_RearmDistance = 10;
+=======
+AVS_RearmDistance = 30;
+>>>>>>> refs/remotes/Rod-Serling/master
 
 // Number of seconds it takes to rearm. (NOT YET IMPLEMENTED)
 AVS_RearmTime = 15;
@@ -85,9 +89,13 @@ AVS_RearmObjects =
 //	"ClassName"
 	//"Land_fs_feed_F"	// Gas station pump.
 	"Land_Hangar_F",
+<<<<<<< HEAD
 	"Land_TentHangar_V1_F",
 	"Land_HelipadSquare_F",
 	"Land_HelipadCircle_F"
+=======
+	"Land_TentHangar_V1_F"
+>>>>>>> refs/remotes/Rod-Serling/master
 ];
 
 // Default cost of a magazine if not found in AVS_RearmCosts
@@ -114,6 +122,7 @@ AVS_RearmCosts =
 // Disabled stock refueling at fuel trucks / gas pumps.
 AVS_DisableStockRefuel = true;
 
+<<<<<<< HEAD
 // Use AVS Refuel System
 AVS_RefuelSystemActive = true;
 
@@ -121,6 +130,10 @@ AVS_RefuelSystemActive = true;
 AVS_FillCanisterActive = true;	// Remember to disable "Exile fill canister empty", to do this see Installation.txt
 
 AVS_RefuelDistance = 8.3;	// 8.3 is minimum distance to refuel on roof of every gas stations with any chopper.
+=======
+AVS_RefuelSystemActive = false;
+AVS_RefuelDistance = 15;
+>>>>>>> refs/remotes/Rod-Serling/master
 AVS_RefuelObjects =
 [
 	"Land_fs_feed_F" // Gas Station Pump

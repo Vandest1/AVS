@@ -164,7 +164,10 @@ AVS_spawned_NON_PersistentVehiclesRandom call _processVehicleSpawn;
 publicVariable "AVS_Version";
 publicVariable "AVS_RearmSystemActive";
 publicVariable "AVS_RefuelSystemActive";
+<<<<<<< HEAD
 publicVariable "AVS_FillCanisterActive";
+=======
+>>>>>>> refs/remotes/Rod-Serling/master
 if (AVS_RearmSystemActive) then
 {
 	diag_log "AVS - Rearm system active.";
@@ -180,6 +183,7 @@ if (AVS_RefuelSystemActive) then
 	publicVariable "AVS_RefuelDistance";
 	publicVariable "AVS_RefuelObjects";
 	publicVariable "AVS_RefuelCost";
+<<<<<<< HEAD
 	publicVariable "AVS_DisableStockRefuel";
 };
 if (AVS_FillCanisterActive) then
@@ -189,5 +193,8 @@ if (AVS_FillCanisterActive) then
 
 
 call AVS_fnc_sanitizegastation;
+=======
+};
+>>>>>>> refs/remotes/Rod-Serling/master
 
 diag_log "AVS - Initialized.";

@@ -26,7 +26,11 @@ if (!_OK) exitWith
 _fuelEmpty = 1 - (fuel _vehicle);
 _totalCapacity = (configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "fuelCapacity") call BIS_fnc_GetCfgData;
 
-_litersToRefuel = round(_totalCapacity * _fuelEmpty);
+_litresToRefuel = round(_totalCapacity * _fuelEmpty);
 
+<<<<<<< HEAD
 _totalCost = AVS_RefuelCost * _litersToRefuel;
+=======
+_totalCost = AVS_RefuelCost * _litresToRefuel;
+>>>>>>> refs/remotes/Rod-Serling/master
 _totalCost

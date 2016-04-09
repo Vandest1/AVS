@@ -175,6 +175,7 @@ if (hasInterface) then
 							AVS_previousRefuelCost = _refuelCost;
 							AVS_refuelActionAdded = true;
 						};
+<<<<<<< HEAD
 					}
 					else
 					{
@@ -183,6 +184,8 @@ if (hasInterface) then
 							player removeAction AVS_refuelAction;
 							AVS_refuelActionAdded = false;
 						};
+=======
+>>>>>>> refs/remotes/Rod-Serling/master
 					};
 				};
 			}

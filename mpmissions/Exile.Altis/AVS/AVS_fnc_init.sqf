@@ -33,6 +33,7 @@ if (AVS_RearmSystemActive || AVS_RefuelSystemActive) then
 	};
 	if (AVS_RefuelSystemActive) then {
 		diag_log "AVS Refuel System active.";
+<<<<<<< HEAD
 		AVS_fnc_sanitizegastation = compileFinal (preprocessFileLineNumbers "AVS\AVS_fnc_sanitizegastation.sqf");
 		AVS_fnc_getRefuelCost = compileFinal (preprocessFileLineNumbers "AVS\AVS_fnc_getRefuelCost.sqf");
 		AVS_fnc_refuelVehicleClient = compileFinal (preprocessFileLineNumbers "AVS\AVS_fnc_refuelVehicleClient.sqf");
@@ -43,6 +44,11 @@ if (AVS_RearmSystemActive || AVS_RefuelSystemActive) then
 			AVS_fnc_getFillCanCost = compileFinal (preprocessFileLineNumbers "AVS\AVS_fnc_getFillCanCost.sqf");
 			AVS_fnc_requestFillCanister = compileFinal (preprocessFileLineNumbers "AVS\AVS_fnc_requestFillCanister.sqf");
 		};
+=======
+		AVS_fnc_getRefuelCost = compileFinal (preprocessFileLineNumbers "AVS\AVS_fnc_getRefuelCost.sqf");
+		AVS_fnc_refuelVehicleClient = compileFinal (preprocessFileLineNumbers "AVS\AVS_fnc_refuelVehicleClient.sqf");
+		AVS_fnc_requestRefuel = compileFinal (preprocessFileLineNumbers "AVS\AVS_fnc_requestRefuel.sqf");
+>>>>>>> refs/remotes/Rod-Serling/master
 	};
 	AVS_fnc_setPlayerMoney = compileFinal (preprocessFileLineNumbers "AVS\AVS_fnc_setPlayerMoney.sqf");
 	AVS_fnc_updateInteractionMenu = compileFinal (preprocessFileLineNumbers "AVS\AVS_fnc_updateInteractionMenu.sqf");
