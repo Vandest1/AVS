@@ -118,7 +118,7 @@ AVS_DisableStockRefuel = true;
 AVS_RefuelSystemActive = true;
 
 // Use AVS to fill Fuel-Canister with AVS Refuel Objects (Gas Station Pump). It's active only if AVS Refuel System is active too.
-AVS_FillCanisterActive = true;
+AVS_FillCanisterActive = true;	// Remember to disable "Exile fill canister empty", to do this see Installation.txt
 
 AVS_RefuelDistance = 8.3;	// 8.3 is minimum distance to refuel on roof of every gas stations with any chopper.
 AVS_RefuelObjects =
